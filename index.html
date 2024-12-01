@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-Druck Preisrechner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>3D-Druck Preisrechner</h1>
+        <form id="price-calculator">
+            <div class="input-group">
+                <label for="filament-weight">Filamentverbrauch (g):</label>
+                <input type="number" id="filament-weight" required>
+            </div>
+            <div class="input-group">
+                <label for="filament-cost">Preis pro kg Filament (€):</label>
+                <input type="number" id="filament-cost" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="print-time">Druckzeit (h):</label>
+                <input type="number" id="print-time" step="0.1" required>
+            </div>
+            <div class="input-group">
+                <label for="power-usage">Stromverbrauch (kWh):</label>
+                <input type="number" id="power-usage" step="0.1" required>
+            </div>
+            <div class="input-group">
+                <label for="electricity-cost">Strompreis pro kWh (€):</label>
+                <input type="number" id="electricity-cost" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="machine-depreciation">Abnutzungskosten pro Stunde (€):</label>
+                <input type="number" id="machine-depreciation" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="labor-time">Arbeitszeit (h):</label>
+                <input type="number" id="labor-time" step="0.1" required>
+            </div>
+            <div class="input-group">
+                <label for="labor-rate">Stundenlohn (€):</label>
+                <input type="number" id="labor-rate" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="fixed-costs">Monatliche Fixkosten (€):</label>
+                <input type="number" id="fixed-costs" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="projects-per-month">Geschätzte Projekte pro Monat:</label>
+                <input type="number" id="projects-per-month" required>
+            </div>
+            <div class="input-group">
+                <label for="additional-costs">Zusatzkosten (Materialien, Versand, Verpackung) (€):</label>
+                <input type="number" id="additional-costs" step="0.01" required>
+            </div>
+            <div class="input-group">
+                <label for="profit-margin">Gewinnmarge (%):</label>
+                <input type="number" id="profit-margin" step="0.1" required>
+            </div>
+            <button type="button" class="btn" onclick="calculatePrice()">Berechnen</button>
+        </form>
+        <div id="result" class="result" style="display:none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
